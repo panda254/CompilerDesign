@@ -1,0 +1,41 @@
+declare 1 DECLARE declare moduleDeclaration yes
+---- ---- ---- ---- moduleDeclarations no moduleDeclaration
+module 1 MODULE module moduleDeclaration yes
+compute 1 ID compute moduleDeclaration yes
+; 1 SEMICOL ; moduleDeclaration yes
+---- ---- ---- ---- program no moduleDeclarations
+---- ---- ---- ---- moduleDeclarations no moduleDeclarations
+---- ---- ---- ---- ROOT no
+---- ---- ---- ---- program no otherModules
+<<< 3 DRIVERDEF <<< driverModule yes
+---- ---- ---- ---- program no driverModule
+driver 3 DRIVER driver driverModule yes
+program 3 PROGRAM program driverModule yes
+>>> 3 DRIVERENDDEF >>> driverModule yes
+start 5 START start moduleDef yes
+---- ---- ---- ---- driverModule no moduleDef
+---- ---- ---- ---- moduleDef no statements
+end 9 END end moduleDef yes
+<< 11 DEF << module yes
+---- ---- ---- ---- otherModules no module
+module 11 MODULE module module yes
+empty 11 ID empty module yes
+>> 11 ENDDEF >> module yes
+takes 13 TAKES takes module yes
+input 13 INPUT input module yes
+[ 13 SQBO [ module yes
+a 13 ID a input_plist yes
+---- ---- ---- ---- module no input_plist
+: 13 COLON : input_plist yes
+boolean 13 BOOLEAN boolean dataType yes
+---- ---- ---- ---- input_plist no dataType
+---- ---- ---- ---- input_plist no N1
+] 13 SQBC ] module yes
+; 13 SEMICOL ; module yes
+---- ---- ---- ---- module no ret
+start 15 START start moduleDef yes
+---- ---- ---- ---- module no moduleDef
+---- ---- ---- ---- moduleDef no statements
+end 19 END end moduleDef yes
+---- ---- ---- ---- program no otherModules
+---- ---- ---- ---- otherModules no otherModules

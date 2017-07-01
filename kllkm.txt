@@ -1,0 +1,96 @@
+declare 1 DECLARE declare moduleDeclaration yes
+---- ---- ---- ---- moduleDeclarations no moduleDeclaration
+module 1 MODULE module moduleDeclaration yes
+compute 1 ID compute moduleDeclaration yes
+; 1 SEMICOL ; moduleDeclaration yes
+---- ---- ---- ---- program no moduleDeclarations
+---- ---- ---- ---- moduleDeclarations no moduleDeclarations
+---- ---- ---- ---- ROOT no
+<< 2 DEF << module yes
+---- ---- ---- ---- otherModules no module
+module 2 MODULE module module yes
+arraySum 2 ID arraySum module yes
+>> 2 ENDDEF >> module yes
+takes 3 TAKES takes module yes
+input 3 INPUT input module yes
+[ 3 SQBO [ module yes
+list 3 ID list input_plist yes
+---- ---- ---- ---- module no input_plist
+: 3 COLON : input_plist yes
+array 3 ARRAY array dataType yes
+---- ---- ---- ---- input_plist no dataType
+[ 3 SQBO [ dataType yes
+1.. 3 NUM 1.. range yes
+---- ---- ---- ---- dataType no range
+.. 3 RANGEOP .. range yes
+15 3 NUM 15 range yes
+] 3 SQBC ] dataType yes
+of 3 OF of dataType yes
+real 3 REAL real type yes
+---- ---- ---- ---- dataType no type
+, 3 COMMA , N1 yes
+---- ---- ---- ---- input_plist no N1
+n 3 ID n N1 yes
+: 3 COLON : N1 yes
+integer 3 INTEGER integer dataType yes
+---- ---- ---- ---- N1 no dataType
+---- ---- ---- ---- N1 no N1
+] 3 SQBC ] module yes
+; 3 SEMICOL ; module yes
+returns 4 RETURNS returns ret yes
+---- ---- ---- ---- module no ret
+[ 4 SQBO [ ret yes
+sum 4 ID sum output_plist yes
+---- ---- ---- ---- ret no output_plist
+: 4 COLON : output_plist yes
+real 4 REAL real type yes
+---- ---- ---- ---- output_plist no type
+---- ---- ---- ---- output_plist no N2
+] 4 SQBC ] ret yes
+; 4 SEMICOL ; ret yes
+start 5 START start moduleDef yes
+---- ---- ---- ---- module no moduleDef
+p 7 ID p assignmentStmt yes
+---- ---- ---- ---- simpleStmt no assignmentStmt
+[ 7 SQBO [ lvalueARRStmt yes
+---- ---- ---- ---- whichStmt no lvalueARRStmt
+3 7 NUM 3 Index yes
+---- ---- ---- ---- lvalueARRStmt no Index
+] 7 SQBC ] lvalueARRStmt yes
+:= 7 ASSIGNOP := lvalueARRStmt yes
+q 7 ID q var yes
+---- ---- ---- ---- factor no var
+[ 7 SQBO [ whichId yes
+---- ---- ---- ---- var no whichId
+4 7 NUM 4 Index yes
+---- ---- ---- ---- whichId no Index
+] 7 SQBC ] whichId yes
+---- ---- ---- ---- term no factor
+---- ---- ---- ---- arithmeticExpr no term
+---- ---- ---- ---- term no N5
+---- ---- ---- ---- AnyTerm no arithmeticExpr
+---- ---- ---- ---- arithmeticExpr no N4
+---- ---- ---- ---- arithmeticOrBooleanExpr no AnyTerm
+---- ---- ---- ---- AnyTerm no N8
+---- ---- ---- ---- expression no arithmeticOrBooleanExpr
+---- ---- ---- ---- arithmeticOrBooleanExpr no N7
+---- ---- ---- ---- lvalueARRStmt no expression
+; 7 SEMICOL ; lvalueARRStmt yes
+---- ---- ---- ---- assignmentStmt no whichStmt
+---- ---- ---- ---- statement no simpleStmt
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- moduleDef no statements
+---- ---- ---- ---- statements no statements
+end 10 END end moduleDef yes
+---- ---- ---- ---- program no otherModules
+---- ---- ---- ---- otherModules no otherModules
+<<< 11 DRIVERDEF <<< driverModule yes
+---- ---- ---- ---- program no driverModule
+driver 11 DRIVER driver driverModule yes
+program 11 PROGRAM program driverModule yes
+>>> 11 DRIVERENDDEF >>> driverModule yes
+start 12 START start moduleDef yes
+---- ---- ---- ---- driverModule no moduleDef
+---- ---- ---- ---- moduleDef no statements
+end 13 END end moduleDef yes
+---- ---- ---- ---- program no otherModules

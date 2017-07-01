@@ -1,0 +1,35 @@
+---- ---- ---- ---- program no moduleDeclarations
+---- ---- ---- ---- ROOT no
+---- ---- ---- ---- program no otherModules
+<<< 1 DRIVERDEF <<< driverModule yes
+---- ---- ---- ---- program no driverModule
+driver 1 DRIVER driver driverModule yes
+program 1 PROGRAM program driverModule yes
+>>> 1 DRIVERENDDEF >>> driverModule yes
+start 3 START start moduleDef yes
+---- ---- ---- ---- driverModule no moduleDef
+---- ---- ---- ---- moduleDef no statements
+end 7 END end moduleDef yes
+<< 9 DEF << module yes
+---- ---- ---- ---- otherModules no module
+module 9 MODULE module module yes
+empty 9 ID empty module yes
+>> 9 ENDDEF >> module yes
+takes 11 TAKES takes module yes
+input 11 INPUT input module yes
+[ 11 SQBO [ module yes
+a 11 ID a input_plist yes
+---- ---- ---- ---- module no input_plist
+: 11 COLON : input_plist yes
+boolean 11 BOOLEAN boolean dataType yes
+---- ---- ---- ---- input_plist no dataType
+---- ---- ---- ---- input_plist no N1
+] 11 SQBC ] module yes
+; 11 SEMICOL ; module yes
+---- ---- ---- ---- module no ret
+start 13 START start moduleDef yes
+---- ---- ---- ---- module no moduleDef
+---- ---- ---- ---- moduleDef no statements
+end 17 END end moduleDef yes
+---- ---- ---- ---- program no otherModules
+---- ---- ---- ---- otherModules no otherModules

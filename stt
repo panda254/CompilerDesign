@@ -1,0 +1,25 @@
+int main(){
+
+
+
+	STtable *st_root=(STtable*)malloc(sizeof(STtable));
+	strcpy(st_root->name,"program");
+	st_root->parent=NULL;
+	st_root->nest_level=0;
+	print_head=print_tail=NULL;
+
+	
+	
+
+	STgenerator(tree_root,st_root);
+
+	printf("hello here \n");
+	
+	while(print_head!=print_tail)
+	{
+
+		printf("%s %s\n",print_head->lexeme,print_head->type);
+	
+		print_head=print_head->order;
+	}
+}

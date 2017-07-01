@@ -1,0 +1,134 @@
+---- ---- ---- ---- program no moduleDeclarations
+---- ---- ---- ---- ROOT no
+---- ---- ---- ---- program no otherModules
+<<< 1 DRIVERDEF <<< driverModule yes
+---- ---- ---- ---- program no driverModule
+driver 1 DRIVER driver driverModule yes
+program 1 PROGRAM program driverModule yes
+>>> 1 DRIVERENDDEF >>> driverModule yes
+start 3 START start moduleDef yes
+---- ---- ---- ---- driverModule no moduleDef
+declare 5 DECLARE declare declareStmt yes
+---- ---- ---- ---- statement no declareStmt
+v_1_2_3 5 ID v_1_2_3 idList yes
+---- ---- ---- ---- declareStmt no idList
+---- ---- ---- ---- idList no N3
+: 5 COLON : declareStmt yes
+integer 5 INTEGER integer dataType yes
+---- ---- ---- ---- declareStmt no dataType
+; 5 SEMICOL ; declareStmt yes
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- moduleDef no statements
+get_value 7 GET_VALUE get_value ioStmt yes
+---- ---- ---- ---- statement no ioStmt
+( 7 BO ( ioStmt yes
+v_1_2_3 7 ID v_1_2_3 ioStmt yes
+) 7 BC ) ioStmt yes
+; 7 SEMICOL ; ioStmt yes
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- statements no statements
+declare 9 DECLARE declare declareStmt yes
+---- ---- ---- ---- statement no declareStmt
+result_ 9 ID result_ idList yes
+---- ---- ---- ---- declareStmt no idList
+---- ---- ---- ---- idList no N3
+: 9 COLON : declareStmt yes
+integer 9 INTEGER integer dataType yes
+---- ---- ---- ---- declareStmt no dataType
+; 9 SEMICOL ; declareStmt yes
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- statements no statements
+[ 11 SQBO [ optional yes
+---- ---- ---- ---- moduleReuseStmt no optional
+result_ 11 ID result_ idList yes
+---- ---- ---- ---- optional no idList
+---- ---- ---- ---- idList no N3
+] 11 SQBC ] optional yes
+:= 11 ASSIGNOP := optional yes
+---- ---- ---- ---- simpleStmt no moduleReuseStmt
+use 11 USE use moduleReuseStmt yes
+module 11 MODULE module moduleReuseStmt yes
+square 11 ID square moduleReuseStmt yes
+with 11 WITH with moduleReuseStmt yes
+parameters 11 PARAMETERS parameters moduleReuseStmt yes
+v_1_2_3 11 ID v_1_2_3 idList yes
+---- ---- ---- ---- moduleReuseStmt no idList
+---- ---- ---- ---- idList no N3
+; 11 SEMICOL ; moduleReuseStmt yes
+---- ---- ---- ---- statement no simpleStmt
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- statements no statements
+print 13 PRINT print ioStmt yes
+---- ---- ---- ---- statement no ioStmt
+( 13 BO ( ioStmt yes
+result 13 ID result var yes
+---- ---- ---- ---- ioStmt no var
+---- ---- ---- ---- var no whichId
+) 13 BC ) ioStmt yes
+; 13 SEMICOL ; ioStmt yes
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- statements no statements
+---- ---- ---- ---- statements no statements
+end 15 END end moduleDef yes
+<< 21 DEF << module yes
+---- ---- ---- ---- otherModules no module
+module 21 MODULE module module yes
+square 21 ID square module yes
+>> 21 ENDDEF >> module yes
+takes 23 TAKES takes module yes
+input 23 INPUT input module yes
+[ 23 SQBO [ module yes
+x 23 ID x input_plist yes
+---- ---- ---- ---- module no input_plist
+: 23 COLON : input_plist yes
+integer 23 INTEGER integer dataType yes
+---- ---- ---- ---- input_plist no dataType
+---- ---- ---- ---- input_plist no N1
+] 23 SQBC ] module yes
+; 23 SEMICOL ; module yes
+returns 25 RETURNS returns ret yes
+---- ---- ---- ---- module no ret
+[ 25 SQBO [ ret yes
+value 25 ID value output_plist yes
+---- ---- ---- ---- ret no output_plist
+: 25 COLON : output_plist yes
+integer 25 INTEGER integer type yes
+---- ---- ---- ---- output_plist no type
+---- ---- ---- ---- output_plist no N2
+] 25 SQBC ] ret yes
+; 25 SEMICOL ; ret yes
+start 27 START start moduleDef yes
+---- ---- ---- ---- module no moduleDef
+value 29 ID value assignmentStmt yes
+---- ---- ---- ---- simpleStmt no assignmentStmt
+:= 29 ASSIGNOP := lvalueIDStmt yes
+---- ---- ---- ---- whichStmt no lvalueIDStmt
+x 29 ID x var yes
+---- ---- ---- ---- factor no var
+---- ---- ---- ---- var no whichId
+---- ---- ---- ---- term no factor
+---- ---- ---- ---- arithmeticExpr no term
+* 29 MUL * op2 yes
+---- ---- ---- ---- N5 no op2
+---- ---- ---- ---- term no N5
+x 29 ID x var yes
+---- ---- ---- ---- factor no var
+---- ---- ---- ---- var no whichId
+---- ---- ---- ---- N5 no factor
+---- ---- ---- ---- N5 no N5
+---- ---- ---- ---- AnyTerm no arithmeticExpr
+---- ---- ---- ---- arithmeticExpr no N4
+---- ---- ---- ---- arithmeticOrBooleanExpr no AnyTerm
+---- ---- ---- ---- AnyTerm no N8
+---- ---- ---- ---- expression no arithmeticOrBooleanExpr
+---- ---- ---- ---- arithmeticOrBooleanExpr no N7
+---- ---- ---- ---- lvalueIDStmt no expression
+; 29 SEMICOL ; lvalueIDStmt yes
+---- ---- ---- ---- assignmentStmt no whichStmt
+---- ---- ---- ---- statement no simpleStmt
+---- ---- ---- ---- statements no statement
+---- ---- ---- ---- moduleDef no statements
+---- ---- ---- ---- statements no statements
+end 31 END end moduleDef yes
+---- ---- ---- ---- program no otherModules
+---- ---- ---- ---- otherModules no otherModules
